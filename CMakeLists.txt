@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.9)
 
+project(hexapod-mk2)
+
 ### TOOLCHAIN SETUP START ##############################################################################################
 
 # You must set configuration vars here
@@ -9,8 +11,6 @@ set(AVR_TOOLCHAIN_ROOT_PATH ${CMAKE_CURRENT_LIST_DIR}/toolchain)
 include(./toolchain.cmake)
 ### TOOLCHAIN SETUP END ################################################################################################
 
-project(hexapod-mk2)
-
 set(CMAKE_CXX_STANDARD 11)
 
 # add any additional library include dirs your project needs here
@@ -19,7 +19,7 @@ include_directories(
 
 # use this target for a quick compile-only check of your CPP files
 # add more source (CPP) files here when you add them to the sketch
-add_executable(hexapod-mk2 main.cpp main.cpp)
+add_executable(hexapod-mk2 main.cpp)
 
 set_target_properties(hexapod-mk2 PROPERTIES LINKER_LANGUAGE CXX)
 
