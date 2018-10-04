@@ -3,10 +3,23 @@ SET(CMAKE_SYSTEM_VERSION 1)
 
 # Check toolchain
 if (NOT AVR_TOOLCHAIN_ROOT_PATH)
-    message(FATAL_ERROR "Please add set(AVR_TOOLCHAIN_ROOT_PATH \"<path to toolchain root>\") in your CMakeLists.txt")
+    message(FATAL_ERROR "Please add set(AVR_TOOLCHAIN_ROOT_PATH \"<absolute path to toolchain root>\") in your CMakeLists.txt")
 endif (NOT AVR_TOOLCHAIN_ROOT_PATH)
 
 set(CMAKE_C_COMPILER ${AVR_TOOLCHAIN_ROOT_PATH}/bin/avr-gcc)
-set(CMAKE_CXX_COMPILER ${AVR_TOOLCHAIN_ROOT_PATH}/bin/avr-g++)
+set(CMAKE_C_COMPILER_ID_RUN TRUE)
+set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_C_COMPILER_FORCED TRUE)
+set(CMAKE_COMPILER_IS_GNUCC 1)
 
-#TODO add toolchain include directories
+set(CMAKE_CXX_COMPILER ${AVR_TOOLCHAIN_ROOT_PATH}/bin/avr-g++)
+set(CMAKE_CXX_COMPILER_ID_RUN TRUE)
+set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_FORCED TRUE)
+set(CMAKE_COMPILER_IS_GNUCXX 1)
+
+SET(CMAKE_EXE_LINKER_FLAGS_INIT "-specs=nosys.specs")
+SET(CMAKE_EXE_LINKER_FLAGS "-specs=nosys.specs")
+
+#set(CMAKE_SYSTEM_INCLUDE_PATH "${AVR_TOOLCHAIN_ROOT_PATH}/avr/include")
+#set(CMAKE_SYSTEM_LIBRARY_PATH "${AVR_TOOLCHAIN_ROOT_PATH}/avr/lib")

@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.9)
 
 # You must set configuration vars here
 
-set(AVR_TOOLCHAIN_ROOT_PATH "./../avr8-gnu-toolchain-win32_x86")
+set(AVR_TOOLCHAIN_ROOT_PATH ${CMAKE_CURRENT_LIST_DIR}/toolchain)
 
 include(./toolchain.cmake)
 ### TOOLCHAIN SETUP END ################################################################################################
