@@ -7,6 +7,7 @@ project(hexapod-mk2)
 # You must set configuration vars here
 
 set(AVR_TOOLCHAIN_ROOT_PATH ${CMAKE_CURRENT_LIST_DIR}/toolchain)
+set(AVR_MCU atmega8)
 
 include(./toolchain.cmake)
 ### TOOLCHAIN SETUP END ################################################################################################
@@ -19,9 +20,9 @@ include_directories(
 
 # use this target for a quick compile-only check of your CPP files
 # add more source (CPP) files here when you add them to the sketch
-add_executable(hexapod-mk2 main.cpp)
+#add_executable(hexapod-mk2 main.cpp)
 
-set_target_properties(hexapod-mk2 PROPERTIES LINKER_LANGUAGE CXX)
+#set_target_properties(hexapod-mk2 PROPERTIES LINKER_LANGUAGE CXX)
 
 # use the following two targets for building and uploading sketches from clion.
 # select "verify" for just building, select "upload" for building and uploading.
