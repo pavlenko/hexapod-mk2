@@ -1,5 +1,6 @@
-SET(CMAKE_SYSTEM_NAME Generic)
-SET(CMAKE_SYSTEM_VERSION 1)
+set(CMAKE_SYSTEM_NAME Generic)
+set(CMAKE_SYSTEM_VERSION 1)
+set(CMAKE_VERBOSE_MAKEFILE 1)
 
 # Check toolchain
 if (NOT AVR_TOOLCHAIN_ROOT_PATH)
@@ -37,8 +38,8 @@ set(hex_file    ${CMAKE_PROJECT_NAME}--flash.hex)
 set(map_file    ${CMAKE_PROJECT_NAME}--flash.map)
 set(eeprom_file ${CMAKE_PROJECT_NAME}--eeprom.hex)
 
-#set(CMAKE_SYSTEM_INCLUDE_PATH "${AVR_TOOLCHAIN_ROOT_PATH}/avr/include")
-#set(CMAKE_SYSTEM_LIBRARY_PATH "${AVR_TOOLCHAIN_ROOT_PATH}/avr/lib")
+set(CMAKE_SYSTEM_INCLUDE_PATH "${AVR_TOOLCHAIN_ROOT_PATH}/avr/include")
+set(CMAKE_SYSTEM_LIBRARY_PATH "${AVR_TOOLCHAIN_ROOT_PATH}/avr/lib")
 
 add_executable(${elf_file} EXCLUDE_FROM_ALL main.cpp)
 
